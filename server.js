@@ -34,26 +34,15 @@ app.use((req, res, next) => {
 // });
 
 app.get('/', (req, res) => {
-    res.send({
-        name: 'Matt',
-        likes: [
-            'biking',
-            'stuff',
-            'warhammer'
-        ]
+    res.render('home.hbs', {
+        pageTitle: 'Home Page',
+        welcomeMessage: 'Welcome message to my website'
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page'
-    });
-});
-
-app.get('/home', (req, res) => {
-    res.render('home.hbs', {
-        pageTitle: 'Home Page',
-        welcomeMessage: 'Welcome message to my website'
     });
 });
 
